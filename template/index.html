@@ -1,0 +1,116 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images-removebg-preview (1).png">
+  <title>Farmer's Delight</title>
+  <link rel="stylesheet" href="{%static 'style.css' %}">
+  <link rel="html" href="predict.html">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<style>
+  #Home {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("{% static 'img/rice-farmer-vietnam-uhd-4k-wallpaper.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+</style>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+  <div class="container-fluid">
+    <img class="nav-img" src="{%static 'img/images-removebg-preview (1).png'%}" style="width: 50px;height: 50px;">
+    <a class="navbar-brand" href="#">FARMER'S DELIGHT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"  aria-expanded="false" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item">
+          <a class="nav-link "  href="#Home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "  href="#predict">Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "  href="#Contact">Contact</a>
+        </li>
+        
+      </ul>
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn p-2 my-lg-0 my-4">Log Out</button>
+      </form>
+      </div>
+  </div>
+</nav>
+  
+
+<!----Home-->
+<section id="Home" >
+<h1 class="text-center">FARMER'S DELIGHT</h1>
+<h6 style="color: white;">Variety's the very spice of life ,that gives it all its flavor</h6>
+
+</section>
+
+<!---About-->
+
+<section id="predict" style="background: linear-gradient(to right,#374f0e,#676d11 100%);">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-12">
+         <img src="{%static 'img/predict.webp'%}" class="img-fluid">
+         <button onclick="window.location.href='http://127.0.0.1:8000/predict'" style=" color: rgb(25, 33, 24) !important;" class="btn signin predict_button" >Predict</button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-12 p-lg-5 p-2  my-5">
+      <h1>vegetables price predictor</h1>
+      <P>This study leverages a Random Forest regression model to predict vegetable prices using key features: Vegetable Name, Season, Month, Temperature, Disaster Occurrence in the Last 3 Months, Vegetable Condition, and Current Price per kg. The model aims to provide accurate price forecasts by analyzing historical data and considering environmental and temporal factors. By integrating these variables, the prediction model can assist farmers, traders, and policymakers in making informed decisions. The approach demonstrates the efficacy of machine learning in agricultural price forecasting, ultimately contributing to market stability and economic planning.
+      </P>
+    </div>
+     
+  </div>
+  </div>
+
+</section>
+
+
+<!---Contact-->
+<section id="Contact">
+  <div class="container box">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+        <img src="{%static 'img/contact.avif'%}"  class="img-fluid">
+
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <h1>CONTACT US</h1>
+        <form class="mb-3" onsubmit="validateForm(event)">
+          <input type="text" class="form-control" placeholder="Enter your name">
+          <input type="email" class="form-control" placeholder="Enter your mail id">
+          <textarea class="form-control " placeholder="Enter your message "></textarea>
+          <button class="btn signin">Send Message</button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<footer>Copyrights @farmer's delight</footer>
+<script>
+  function validateForm(event) {
+      const form = document.getElementById('admissionForm');
+      if (!form.checkValidity()) {
+          event.preventDefault();
+          alert('Please fill out all the required fields.');
+      }
+}
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
