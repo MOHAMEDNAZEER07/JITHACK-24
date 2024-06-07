@@ -9,4 +9,5 @@ urlpatterns = [
     path('predict', views.predict, name='predict'),
     path('logout',views.logout_view, name='logout'),
     path('result', views.result, name='result'),
+
 ]

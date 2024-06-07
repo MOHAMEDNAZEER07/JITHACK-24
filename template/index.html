@@ -34,12 +34,14 @@
           <a class="nav-link "  href="#Home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link "  href="#predict">Predict</a>
+          <a class="nav-link "  href="#Crop">Crop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link "  href="#Contact">Contact</a>
+          <a class="nav-link "  href="#predict">Price</a>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link "  href="#Contact">PlantDr</a>
+        </li>
       </ul>
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
@@ -48,16 +50,31 @@
       </div>
   </div>
 </nav>
-  
 
-<!----Home-->
 <section id="Home" >
 <h1 class="text-center">FARMER'S DELIGHT</h1>
 <h6 style="color: white;">Variety's the very spice of life ,that gives it all its flavor</h6>
 
 </section>
 
-<!---About-->
+
+<section id="Crop" style="background: linear-gradient(to right,#374f0e,#676d11 100%);">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+           <img src="{%static 'img/crop.jpg'%}" class="img-fluid">
+           <button onclick="window.location.href='http://127.0.0.1:8000/input'" style=" color: rgb(25, 33, 24) !important;" class="btn signin predict_button" >Predict</button>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12 p-lg-5 p-2  my-5">
+        <h1>Crop Recommendation</h1>
+        <P>This study leverages a Random Forest regression model to predict vegetable prices using key features: Vegetable Name, Season, Month, Temperature, Disaster Occurrence in the Last 3 Months, Vegetable Condition, and Current Price per kg. The model aims to provide accurate price forecasts by analyzing historical data and considering environmental and temporal factors. By integrating these variables, the prediction model can assist farmers, traders, and policymakers in making informed decisions. The approach demonstrates the efficacy of machine learning in agricultural price forecasting, ultimately contributing to market stability and economic planning.
+        </P>
+      </div>
+       
+    </div>
+    </div>
+  
+  </section>
 
 <section id="predict" style="background: linear-gradient(to right,#374f0e,#676d11 100%);">
 <div class="container-fluid">
@@ -78,6 +95,8 @@
 </section>
 
 
+<!---About-->
+
 <!---Contact-->
 <section id="Contact">
   <div class="container box">
@@ -87,15 +106,12 @@
 
       </div>
       <div class="col-lg-6 col-md-6 col-12">
-        <h1>CONTACT US</h1>
-        <form class="mb-3" onsubmit="validateForm(event)">
-          <input type="text" class="form-control" placeholder="Enter your name">
-          <input type="email" class="form-control" placeholder="Enter your mail id">
-          <textarea class="form-control " placeholder="Enter your message "></textarea>
-          <button class="btn signin">Send Message</button>
+        <h1>Plant Doctor</h1>
+        <form action="{% url 'llm' %}" class="mb-3" method="post" >
+          {% csrf_token %}
+          <textarea class="form-control " name="query" placeholder="Enter your query about plant"></textarea>
+          <button class="btn signin">Send</button>
         </form>
-
-
       </div>
     </div>
   </div>

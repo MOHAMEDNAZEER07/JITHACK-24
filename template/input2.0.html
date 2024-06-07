@@ -51,8 +51,8 @@ body{
     bottom: -80px;
 }
 form{
-    height: 746px;
-    width:472px;
+    height: 898px;
+    width:574px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -169,8 +169,8 @@ button{
     let count = 0; // Define count variable
 
     function predict() {
-        var vegetable = document.getElementById("vegetable").value;
-        var season = document.getElementById("season").value;
+        var vegetable = document.getElementById("Nitrogen").value;
+        var season = document.getElementById("Phosphorus").value;
         var month = document.getElementById("month").value;
         var availability = document.getElementById("Disaster").value;
         var condition = document.getElementById("condition").value;
@@ -178,8 +178,8 @@ button{
 
         if (vegetable && season && month && availability && temperature && condition) {
             count += 1;
-            console.log("Vegetable: " + vegetable);
-            console.log("Season: " + season);
+            console.log("Nitrogen:" + vegetable);
+            console.log("Phosphorus " + season);
             console.log("Month: " + month);
             console.log("Availability: " + availability);
             console.log("Temperature: " + temperature);
@@ -198,55 +198,25 @@ button{
     <div class="background">
         
     </div>
-    <form action="{% url 'result' %}" method="post">
-        {% csrf_token %} 
-        <h3>Prediction Input</h3>
-
-        <label for="vegetable">Name of the Vegetable:</label>
-        <input type="text" id="vegetable" name="vegetable"><br>
-
-        <label for="season">Season:</label>
-        <select id="season" name="season">
-            <option value="">options...</option>
-            <option value="spring">Spring</option>
-            <option value="summer">Summer</option>
-            <option value="winter">Winter</option>
-        </select><br>
-
-          <label for="month">Month:</label>
-            <select id="month" name="month">
-                <option value="">options...</option>
-                <option value="jan">January</option>
-                <option value="feb">February</option>
-                <option value="march">March</option>
-                <option value="april">April</option>
-                <option value="may">May</option>
-                <option value="june">June</option>
-                <option value="july">July</option>
-                <option value="aug">August</option>
-                <option value="sept">September</option>
-                <option value="oct">October</option>
-                <option value="nov">November</option>
-                <option value="dec">December</option>
-            </select><br>
-
-            <label for="Disaster">Disaster happened in last 3month (Yes or No):</label>
-            <select id="Disaster" name="Disaster">
-                <option value="">options...</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select><br>
-
-            <label for="condition"> Vegetable condition:</label>
-            <select id="condition" name="condition">
-                <option value="">options...</option>
-                <option value="fresh">fresh</option>
-                <option value="avarage">avarage</option>
-                <option value="scrap">scrap</option>
-            </select><br>
-            <label for="temperature">Temperature:</label>
-            <input type="text" id="temperature" name="temperature"><br>
-            <button type="submit" onclick="predict()" method="post" enctype="multipart/form-data" action="{% url 'result' %}" >Predict</button>
+    <form action="{% url 'crop' %}" method="post">
+        <h3>Crop Recommendation Input</h3>
+        {% csrf_token %}
+        <label for="Nitrogen">Enter the Nitrogen value of the soil:</label>
+        <input type="text" id="Nitrogen" name="Nitrogen"><br>
+        <label for="Phosphorus">Enter the Phosphorus value of the soil:</label>
+        <input type="text" id="Phosphorus" name="Phosphorus"><br>
+        <label for="Potassium">Enter the Potassium value of the soil:</label>
+        <input type="text" id="Potassium" name="Potassium"><br>
+        <label for="temperature">Enter the temperature value of the soil:</label>
+        <input type="text" id="temperature" name="temperature"><br>
+        <label for="humidity">Enter the humidity value of the soil:</label>
+        <input type="text" id="humidity" name="humidity"><br>
+        <label for="ph">Enter the pH value of the soil:</label>
+        <input type="text" id="ph" name="ph"><br>
+        <label for="rainfall">Enter the rainfall in cm:</label>
+        <input type="text" id="rainfall" name="rainfall"><br>
+        <button type="submit">Predict</button>
     </form>
+    
 </body>
 </html>

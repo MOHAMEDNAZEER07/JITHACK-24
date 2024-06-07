@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 import pandas as pd
-
+import numpy as np
 import joblib
 model = joblib.load('./savedmodel/rf_model.joblib')
 
@@ -68,3 +68,4 @@ def result(request):
             predicted_pricerf = model.predict(new_input)
             print(predicted_pricerf[0])
             return render(request, 'result.html', {'result': round(predicted_pricerf[0], 2), 'vegetable': vegetable})
+

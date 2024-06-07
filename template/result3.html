@@ -172,28 +172,30 @@ button{
         <h3>Prediction Output</h3>
         {% csrf_token %} 
         <div id="price-list" class="page">
-            <div class="vegetable-container">
-                {% if vegetable == 'tomato' %}
-        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/product5.webp' %}" alt="Tomato">
-    {% elif vegetable == 'carrot' %}
-        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/Carrot__40927.jpg' %}" alt="Carrot">
-    {% elif vegetable == 'onion' %}
-        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/onion.jpg' %}" alt="Onion">
-    {% else %}
+        <div class="vegetable-container">
+        {% if result3 == 'Coffee' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/coffee.jpg' %}" alt="coffee">
+        {% elif result3 == 'Jute' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/juit.jpg' %}" alt="jute">
+        {% elif result3 == 'Maize' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/maize.jpg' %}" alt="maize">
+        {% elif result3 == 'Rice' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/rice.jpg' %}" alt="maize">
+        {% elif result3 == 'Banana' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/banana.jpg' %}" alt="maize">
+        {% elif result3 == 'Mango' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/mango.jpg' %}" alt="maize">
+        {% elif result3 == 'Wheat' %}
+        <img id="vegetable-image" class="vegetable-image" src="{% static 'img/wheat.jpg' %}" alt="maize">
+        {% else %}
         <p>Sorry, image not in database</p>
-    {% endif %}
-                
-    <p id="priceRate" class="price-rate">
+        {% endif %}
         <center>
-           <p class="top">predicted price of a {{vegetable}} per kg is</p> 
+           <p class="top">predicted plant to plant is<br> <h1>{{result3}}</h1>  </p>
+
+           
         </center>
-        <br> 
-        <center>
-            <span class="currency-symbol material-symbols-outlined">currency_rupee</span> 
-            <span class="price-result">{{result}}</span>
-        </center>
-        
-      </p>
+        </p>
       
             </div>
         </div>
