@@ -61,7 +61,7 @@ def result(request):
                 'Season': [season.lower()],
                 'Month':[month.lower()],
                 'Temp': [int(temperature)],
-                'Deasaster Happen in last 3month': [Disaster.lower()],
+                'Deasaster Happen in last 3month': [disaster.lower()],
                 'Vegetable condition': [condition.lower()]
                 })
             print(new_input)
