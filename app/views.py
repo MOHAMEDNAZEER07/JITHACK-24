@@ -53,7 +53,7 @@ def result(request):
             vegetable = request.POST['vegetable']
             season = request.POST['season']
             month =  request.POST['month']
-            Disaster =  request.POST['Disaster']
+            disaster =  request.POST['Disaster']
             condition=request.POST['condition']
             temperature =  request.POST['temperature']
             new_input = pd.DataFrame({
