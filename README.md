@@ -1,5 +1,3 @@
----
-
 # Farmer's Delight - Empowering Farmers with Technology
 
 Farmer's Delight is a comprehensive web platform designed to assist farmers in making informed decisions for their agricultural endeavors. By leveraging machine learning, real-time data, and expert knowledge, the platform provides three core features: crop recommendations, vegetable price prediction, and a plant care assistant. This innovative solution aims to improve farm productivity, optimize market prices, and provide quick plant care guidance, all tailored to the needs of modern farmers.
@@ -104,4 +102,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Farmer's Delight is revolutionizing the agricultural sector by empowering farmers with data-driven insights, allowing them to make smarter decisions, optimize their crops, and improve their livelihoods. Join us on our mission to transform the way farmers interact with technology!
 
----
